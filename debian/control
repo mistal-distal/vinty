@@ -1,0 +1,18 @@
+Source: vinty
+Section: net
+Priority: optional
+Maintainer: Jeroen Hooyberghs <jeroen.hooyberghs@fks.be>
+Build-Depends: debhelper (>= 4.0), python-dev
+Standards-Version: 3.6.2
+
+Package: vinty
+Architecture: any
+Depends: openssl, ${python:Depends}
+Recommends: openvpn, httpd
+Description: PKI tools for use with OpenVPN
+ This package includes some tools to manage your OpenVPN certificates:
+ .
+  pkitool   : create/renew/revoke certificates
+  pkipasswd : set/clear/alter passphrases on RSA keys
+ .
+ Additionally, a webfronted to pkitool is included as well.
