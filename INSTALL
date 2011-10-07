@@ -1,0 +1,25 @@
+Vinty - manage OpenSSL certificates for use with OpenVPN.
+===========================================================
+
+See the AUTHORS file for the list of authors.
+
+License: GNU GENERAL PUBLIC LICENSE (see the LICENSE file for details)
+
+
+0. Download
+-----------
+::
+
+    $ git clone http://code.google.com/p/vinty/
+
+
+1. Build application
+   -----------------
+
+2. Configuration
+   -------------
+
+
+3. Uninstall
+   ---------
+

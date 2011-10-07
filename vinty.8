@@ -1,0 +1,126 @@
+.TH "VINTY" "8"
+.SH "NAME"
+vinty \-\- manage OpenSSL certificates
+.SH "SYNOPSIS"
+.B vinty \-\-init
+
+.B vinty \-\-create
+client|server
+common-name
+
+.B vinty \-\-renew
+client|server
+common-name
+
+.B vinty \-\-revoke
+common-name
+
+.B vinty \-\-list
+valid|revoked|all
+.SH "DESCRIPTION"
+This manual page documents
+.BR vinty .
+.B vinty
+is used to manage (create, revoke, renew) OpenSSL certificate/key pairs.
+It can only create self-signed certificates, as its primary use is
+creating certificate/key pairs for use with OpenVPN.
+.PP
+.B vinty
+is an alternative to the PKI web application. Using both at the same time
+is not recommended, since certificate/key pairs created by the web application
+are owned by the user running the webserver. Ceritificates created by
+.B vinty
+cannot be read by the web application.
+.SH OPTIONS
+.TP
+.B \-\-init
+Initialise the PKI infrastructure. This will create a Certificate Authority,
+generate the necessary Diffie Hellman parameters and create an initial CRL
+(Certificate Revocation List).
+.TP
+.B \-\-create
+Create a certificate/key pair of a given type (either
+.B client
+or
+.B server\fR\|)
+with the given
+.BR common-name .
+.TP
+.B \-\-renew
+Renew a certificate/key pair of a given type (either
+.B client
+or
+.B server\fR\|)
+and with a given
+.BR common-name .
+.TP
+.B \-\-revoke
+Revoke a certificate of a given
+.BR common-name .
+Additionally, the CRL will be regenerated.
+.TP
+.B \-\-list
+Print out a list of certificates issued by the Certificate Authority.
+The type of certificates must be specified. You can choose to show
+only valid, revoked or all certificates.
+.TP
+.B \-\-help, \-h
+Show a help message and exit.
+.TP
+.B \-\-version
+Show version info and exit.
+.SH "FILES"
+.TP
+.B /etc/vinty/vinty.cfg
+The main configuration file of
+.BR vinty .
+It contains the necessary information to be embedded in the certificates,
+the key size, and specifies where the keys are stored.
+.TP
+.B /etc/vinty/openssl.cnf
+The OpenSSL configuration file used by
+.BR vinty .
+.PP
+The web application uses 2 additional configuration files:
+.TP
+.B /etc/vinty/apache.conf
+The necessary Apache configuration to use the
+.BR vinty
+web frontend.
+.TP
+.B /etc/vinty/scripts.conf
+Configuration file sourced by external scripts.
+.SH "EXAMPLES"
+Create a client certificate with
+.B test1.example.com
+as common-name:
+
+.B vinty \-\-create client test1.example.com
+
+Renew the certificate with common-name
+.B test1.example.com
+(which is a client certificate):
+
+.B vinty \-\-renew client test1.example.com
+
+Revoke the certificate with common-name
+.B test1.example.com
+
+.B vinty \-\-revoke test1.example.com
+
+Show all certificates issued by the Certificate Authority:
+
+.B vinty \-\-list all
+.SH "BUGS"
+When using the web application, all certificates and keys will be owned by
+the user running the webserver.
+.PP
+When using the commandline tool, certificates and keys are owned by the
+.B root
+user.
+.PP
+Certificates created with the commandline tool are thus not accessible
+from the web application, as they are owned by
+.BR root .
+.SH "SEE ALSO"
+\fIopenssl\fR\|(1), \fIvintypasswd\fR\|(1), \fIopenvpn\fR\|(8)

@@ -1,0 +1,87 @@
+/** Revision history **********************************************************
+ * author  : Wouter Eerdekens <info@fks.be>
+ * date    : 2011-08-12
+ * version : 0.1
+ * history : 2011-08-12 - Prepare for initial release <jeroen.hooyberghs@fks.be>
+             2006-07-26 - Initial version.
+ ******************************************************************************/
+
+/* Headers */
+h1 {
+   font-family: sans-serif;
+   color: #207565;
+   text-align: center;
+   margin: 0;
+   font-size: x-large;
+}
+h1.error {
+   color: #a50505;
+   text-align: left;
+   font-size: x-large;
+}
+h2 {
+   color: #333;
+   margin: 0;
+}
+/* Various div elements */
+div.container {
+   padding: .5em;
+   border: 2px solid #207565;
+   margin: .5em 0;
+   background-color: #eee;
+}
+div.info {
+   padding: 1em;
+   border: 3px solid #207565;
+   text-align: center;
+}
+div.error {
+   padding: 1em;
+   border: 3px solid #a50505;
+}
+div.footer {
+   margin-top: 1em;
+   text-align: center;
+}
+div.table, div.infotable {
+   display: table;
+   width: 100%;
+}
+div.table > span.name {
+   display: table-cell;
+   width: 12em;
+   padding: .5em 0;
+}
+div.infotable > span.name {
+   display: table-cell;
+   width: 8em;
+   padding: .25em;
+}
+/* Form layout */
+form {
+   display: inline;
+   margin: .5em;
+}
+select.cn {
+   width: 15em;
+   margin-right: 1em;
+}
+input.button {
+   margin-left: 0;
+}
+/* Table layout */
+table {
+   width: 100%;
+   border: 1px solid #000;
+}
+th {
+   border: 1px solid #333;
+   text-align: left;
+   padding: 5px;
+}
+td {
+   border: 1px solid #333;
+   text-align: left;
+   padding: 5px;
+   font-family: monospace;
+}

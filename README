@@ -1,0 +1,55 @@
+
+Vinty - manage OpenSSL certificates for use with OpenVPN.
+===========================================================
+
+See the AUTHORS file for the list of authors.
+
+License: GNU GENERAL PUBLIC LICENSE (see the LICENSE file for details)
+
+
+0. Download
+-----------
+::
+
+    $ git clone http://code.google.com/p/vinty/
+
+
+1. Included applications
+   ---------------------
+
+   - vinty       -- commandline tool to create/renew/revoke certificates.
+                    See vinty(8) for usage information.
+
+   - vintypasswd -- set or remove passphrases from RSA keys generated with
+                    vinty. See vintyapasswd(1) for usage information.
+
+2. Web Application
+   ---------------
+
+   A web application to manage your certificates is included and has all
+   the functionality of the vinty commandline utility.
+
+   Additionally, certificate/key pairs, together with the CA's certificate
+   can be downloaded as a zipfile from the web application.
+
+   Another feature of the web application is the ability to publish the
+   CRL from the application, by calling an external script.
+
+3. Configuration
+   -------------
+
+   The main configuration file is /etc/vinty/vinty.cfg. The default
+   configuration should be edited before either the commandline tool
+   or the web application are used.
+
+4. Bugs
+   ----
+
+   The vinty commandline application and the webfrontend cannot
+   easily work together. See vinty(8) for details.
+
+5. Make debian package
+   -------------------
+   cd $DIR/vinty
+   dch (command to edit the changelog if needed)
+   dpkg-buildpackage
