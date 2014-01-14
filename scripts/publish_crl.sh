@@ -19,12 +19,18 @@ CRL="$1"
 ## Publish the CRL
 if [ -z "$SSH_SERVER" ]
 then
-   if cp "$CRL" "$OPENVPN_DIR"
+   if [ -n "$COPY_USER" && "$(id -un)" != "$COPY_USER" ]
    then
-      $OPENVPN_CMD
+      sudo -u "$COPY_USER" "$0" "$CRL"
       RV=$?
    else
-      RV=1
+      if cp "$CRL" "$OPENVPN_DIR"
+      then
+         $OPENVPN_CMD
+         RV=$?
+      else
+         RV=1
+      fi
    fi
 else
    if scp -P "$SSH_SERVER_PORT" -i "$SSH_SERVER_KEY" \
