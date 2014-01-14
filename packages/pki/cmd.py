@@ -182,9 +182,9 @@ def revoke_cert(config, cn, move_all=True):
       if fd:
          cmd = pki.OPENSSL_COMMANDS['revoke_crt'] \
                % { 'openssl': sslBin, 'crt': crtFile, 'config': sslCfg }
-         os.write(fd, cmd + ' && ')
-         cmd = pki.OPENSSL_COMMANDS['revoke_verify'] \
-               % { 'openssl': sslBin, 'ca': caFile, 'crt': crtFile }
+         #os.write(fd, cmd + ' && ')
+         #cmd = pki.OPENSSL_COMMANDS['revoke_verify'] \
+         #      % { 'openssl': sslBin, 'ca': caFile, 'crt': crtFile }
          os.write(fd, cmd + '\n')
          os.close(fd)
          result, msg = pki.util.run_ssl_script(fname)
