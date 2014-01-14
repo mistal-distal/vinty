@@ -19,7 +19,7 @@ CRL="$1"
 ## Publish the CRL
 if [ -z "$SSH_SERVER" ]
 then
-   if [ -n "$COPY_USER" && "$(id -un)" != "$COPY_USER" ]
+   if [ -n "$COPY_USER" -a "$(id -un)" != "$COPY_USER" ]
    then
       sudo -u "$COPY_USER" "$0" "$CRL"
       RV=$?
