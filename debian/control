@@ -8,7 +8,7 @@ Standards-Version: 3.6.2
 Package: vinty
 Architecture: any
 Depends: openssl, ${python:Depends}
-Recommends: openvpn, httpd
+Recommends: openvpn, httpd, sudo
 Description: PKI tools for use with OpenVPN
  This package includes some tools to manage your OpenVPN certificates:
  .
