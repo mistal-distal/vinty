@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 4.0), python-dev, dh-python
 Standards-Version: 3.6.2
 
 Package: vinty
-Architecture: any
+Architecture: all
 Depends: openssl, ${python:Depends}
 Recommends: openvpn, httpd, sudo
 Description: PKI tools for use with OpenVPN
