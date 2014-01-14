@@ -1,3 +1,9 @@
+vinty (0.2.1) unstable; urgency=medium
+
+  * silly mistake in 0.2
+
+ -- Frank Gevaerts <frank.gevaerts@fks.be>  Tue, 14 Jan 2014 18:42:09 +0100
+
 vinty (0.2) unstable; urgency=medium
 
   * Compatibility with newer openssl
