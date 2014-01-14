@@ -2,7 +2,7 @@ Source: vinty
 Section: net
 Priority: optional
 Maintainer: Jeroen Hooyberghs <jeroen.hooyberghs@fks.be>
-Build-Depends: debhelper (>= 4.0), python-dev
+Build-Depends: debhelper (>= 4.0), python-dev, dh-python
 Standards-Version: 3.6.2
 
 Package: vinty

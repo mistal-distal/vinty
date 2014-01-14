@@ -47,7 +47,7 @@ binary-arch: build install
 	dh_installdocs
 	dh_installman vinty.8 vintypasswd.1
 	dh_compress
-	dh_python
+	dh_python2
 	dh_fixperms
 	chown $(HTTP_USER) $(PREFIX)/var/lib/vinty
 	dh_installdeb
