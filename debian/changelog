@@ -1,3 +1,10 @@
+vinty (0.2) unstable; urgency=medium
+
+  * Compatibility with newer openssl
+  * Use sudo for interacting with the rest of the system.
+
+ -- Frank Gevaerts <frank.gevaerts@fks.be>  Tue, 14 Jan 2014 18:15:40 +0100
+
 vinty (0.1) unstable; urgency=low
 
   * Prepare for initial release
